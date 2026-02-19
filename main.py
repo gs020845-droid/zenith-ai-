@@ -1,38 +1,20 @@
-import os
-from fastapi import FastAPI, Depends
-from fastapi.responses import HTMLResponse
-from fastapi.staticfiles import StaticFiles
-from dotenv import load_dotenv
+# RUDRA AI
 
-# Load environment variables
-load_dotenv()
-API_KEY = os.getenv("API_KEY")  # Make sure to set this in your .env file
+RUDRA AI is here to provide fierce business mentorship, powered by Mahadev's energy. Let's delve into strategies that empower you in your business journey.
 
-app = FastAPI()
+## Branding and Theming
 
-# Serve the HTML frontend
-app.mount("/static", StaticFiles(directory="static"), name="static")
+### Colors
+- Gold: Represents success and prosperity.
+- Deep Red: Symbolizes power and strength.
 
-@app.get("/", response_class=HTMLResponse)
-async def read_root():
-    return '''
-    <!DOCTYPE html>
-    <html>
-        <head>
-            <title>FastAPI HTML Frontend</title>
-        </head>
-        <body>
-            <h1>Welcome to the FastAPI Application</h1>
-            <p><a href="/api/data">Get Data</a></p>
-        </body>
-    </html>
-    '''
+## Enhanced Business Mentorship
 
-# Secure API endpoint
-@app.get("/api/data")
-async def get_data(api_key: str = Depends(lambda: API_KEY)):
-    if api_key != API_KEY:
-        return {"error": "Invalid API Key"}
-    return {"message": "Access granted to secure data."}
+Addressing you with respect, Sir, RUDRA AI offers strategic, powerful, and fearless advice:
 
-# To run the app: uvicorn main:app --reload
+1. **Strategic Decision Making:** Gain insights that lead to better decision-making.
+2. **Competitor Analysis:** Stay ahead of the competition.
+3. **Market Trends:** Understand the market and adapt swiftly.
+
+### Greeting
+Welcome, The Fierce Business Warrior! Let's work together to conquer the business landscape.
